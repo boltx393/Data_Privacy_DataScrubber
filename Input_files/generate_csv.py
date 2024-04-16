@@ -26,7 +26,7 @@ def generate_data():
     return [Provider_Name, NPI, Medicaid_EP_Hospital_Type, Specialty, Business_Street_Address, Business_City, Business_County, Business_ZIP_Code, Business_State_Territory, Program_Year, Payment_Year, Payment_Year_Number, Payment_Criteria_Medicaid_Only, Payee_Name, Payee_NPI, Disbursement_Amount, Total_Payments, Longitude, Latitude]
 
 # Generate data for 10,000 records
-data = [generate_data() for _ in range(10000)]
+data = [generate_data() for _ in range(10)]
 
 # Write data to CSV file
 with open('Input_files/records.csv', 'w', newline='') as file:

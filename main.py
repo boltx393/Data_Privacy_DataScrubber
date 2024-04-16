@@ -4,6 +4,7 @@ import pandas as pd
 from scrubber import clean_up
 from ei_handler import mask
 from qi_finder import find_qi
+from k_anonymization import k_anonymize
 
 def data_parser(input_file_path, output_file_name):
     # Reading the CSV record file
@@ -28,9 +29,9 @@ def data_parser(input_file_path, output_file_name):
             print('The most risky quasi identifiers that need to be anonymized in the given data are: ')
             for qi in risky_qi:
                 print(qi)
-            # Perform K-anonymization here
-            # Implement your K-anonymization logic
-            # Replace the quasi-identifiers with generalized values
+            # Perform K-anonymization on risky quasi identifiers
+            df = k_anonymize(df, risky_qi, sensitive_columns=['SensitiveColumn1', 'SensitiveColumn2'], k=5)
+            print('K-Anonymization completed.')
         else:
             print('The data does not need any anonymization.')
     else:
