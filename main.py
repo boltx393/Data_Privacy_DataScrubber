@@ -30,7 +30,7 @@ def data_parser(input_file_path, output_file_name):
             for qi in risky_qi:
                 print(qi)
             # Perform K-anonymization on risky quasi identifiers
-            df = k_anonymize(df, risky_qi, sensitive_columns=['SensitiveColumn1', 'SensitiveColumn2'], k=5)
+            df = k_anonymize(df, risky_qi, sensitive_columns=['SensitiveColumn1', 'SensitiveColumn2'], k=3)
             print('K-Anonymization completed.')
         else:
             print('The data does not need any anonymization.')
